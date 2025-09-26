@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurniawan Aditya Hutama</title>
+    <style>
+        /* Reset CSS dan styling dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a69bd);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Sections umum */
+        section {
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #4a69bd;
+        }
+        
+        /* Tentang Saya */
+        .about {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .about-content {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .bio {
+            flex: 1;
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            background-color: #f1f2f6;
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .photo-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .photo-info {
+            padding: 1rem;
+        }
+        
+        .photo-info h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        /* Layanan */
+        .services {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .service-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Kontak */
+        .contact {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact h2:after {
+            background: white;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #1a202c;
+            color: white;
+        }
+        
+        /* Responsivitas */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Kurniawan Aditya Hutama</h1>
+            <p>"Shot, Freeze, Forever"</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="images/profile.jpg" alt="Fotografer profesional dengan kamera" class="profile-img">
+                <div class="bio">
+                    <p>Halo! Saya adalah fotografer profesional dengan pengalaman lebih dari 5 tahun dalam industri fotografi. Saya memiliki passion dalam mengabadikan momen-momen berharga dengan sentuhan artistik dan teknik yang tepat.</p>
+                    <p>Spesialisasi saya meliputi fotografi pernikahan, portrait, landscape, dan produk. Saya percaya bahwa setiap foto memiliki cerita sendiri, dan tugas saya adalah menceritakan cerita tersebut melalui lensa kamera.</p>
+                    <p>Dengan menggunakan peralatan profesional dan teknik editing terkini, saya memastikan setiap hasil karya memenuhi standar kualitas tertinggi dan membuat klien merasa puas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="portfolio">
+            <h2>Portfolio</h2>
+            <div class="gallery">
+                <div class="photo-card">
+                    <img src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Foto pernikahan romantis di pantai saat sunset&id=a1b2c3d4-e5f6-7890-abcd-ef1234567890" alt="Foto pernikahan romantis di pantai saat sunset">
+                    <div class="photo-info">
+                        <h3>Pernikahan Pantai</h3>
+                        <p>Momen spesial pernikahan dengan latar sunset di pantai.</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <img src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Portrait wanita dengan lighting dramatis&id=b2c3d4e5-f6g7-8901-bcde-f23456789012" alt="Portrait wanita dengan lighting dramatis">
+                    <div class="photo-info">
+                        <h3>Portrait Dramatis</h3>
+                        <p>Session portrait dengan pencahayaan yang menciptakan suasana dramatis.</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <img src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Landscape pemandangan gunung dengan kabut pagi&id=c3d4e5f6-g7h8-9012-cdef-345678901234" alt="Landscape pemandangan gunung dengan kabut pagi">
+                    <div class="photo-info">
+                        <h3>Pegunungan Misty</h3>
+                        <p>Pemandangan gunung yang diselimuti kabut di pagi hari.</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <img src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Foto produk fashion dengan lighting studio&id=d4e5f6g7-h8i9-0123-defg-456789012345" alt="Foto produk fashion dengan lighting studio">
+                    <div class="photo-info">
+                        <h3>Fashion Product</h3>
+                        <p>Foto produk fashion dengan teknik lighting studio profesional.</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <img src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Street photography di kota tua&id=e5f6g7h8-i9j0-1234-efgh-567890123456" alt="Street photography di kota tua">
+                    <div class="photo-info">
+                        <h3>Street Life</h3>
+                        <p>Potret kehidupan jalanan di wilayah kota tua yang penuh karakter.</p>
+                    </div>
+                </div>
+                
+                <div class="photo-card">
+                    <img src="https://placeholder-image-service.onrender.com/image/600x400?prompt=Foto makro bunga dengan detail tetes air&id=f6g7h8i9-j0k1-2345-fghi-678901234567" alt="Foto makro bunga dengan detail tetes air">
+                    <div class="photo-info">
+                        <h3>Detail Alam</h3>
+                        <p>Foto makro memperlihatkan detail indah bunga dengan tetesan air.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="services">
+            <h2>Layanan</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>Fotografi Pernikahan</h3>
+                    <p>Mengabadikan momen spesial pernikahan Anda dengan gaya classic dan candid.</p>
+                </div>
+                
+                <div class="service-item">
+                    <h3>Portrait Photography</h3>
+                    <p>Session foto personal, keluarga, atau profesional dengan berbagai konsep.</p>
+                </div>
+                
+                <div class="service-item">
+                    <h3>Fotografi Produk</h3>
+                    <p>Foto produk berkualitas tinggi untuk website, katalog, dan media pemasaran.</p>
+                </div>
+                
+                <div class="service-item">
+                    <h3>Fotografi Landscape</h3>
+                    <p>Menangkap keindahan alam dengan komposisi dan timing yang tepat.</p>
+                </div>
+                
+                <div class="service-item">
+                    <h3>Editing Foto</h3>
+                    <p>Jasa editing foto profesional untuk menyempurnakan hasil pemotretan.</p>
+                </div>
+                
+                <div class="service-item">
+                    <h3>Photo Printing</h3>
+                    <p>Cetak foto dengan kualitas premium pada berbagai media dan ukuran.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <section class="contact">
+        <div class="container">
+            <h2>Hubungi Saya</h2>
+            <div class="contact-info">
+                <p>Email: kurnnwn81@gmail.com</p>
+                <p>Telepon: +6285117269120</p>
+                <p>Lokasi: Pinrang, Indonesia</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/kur.nwan/" class="social-link">Instagram</a>
+                <a href="wa.me/6285117269120" class="social-link">WhatsApp</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Krafoto. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
